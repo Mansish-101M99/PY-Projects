@@ -15,5 +15,9 @@ print("Length of video : ", lng_vid, " Seconds")
 authr_vid = dwnld_video_link.author
 print("Video publisher : ", authr_vid)
 
-dwnld_video_link.streams.get_highest_resolution().download()
-print("Video downloaded...")
+try:
+    dwnld_video_link.streams.get_highest_resolution().download()
+    print("Video downloaded...")
+except Exception as e:
+    print(f"An error occured :--\n {e}")
+
